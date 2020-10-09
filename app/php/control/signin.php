@@ -51,7 +51,7 @@ if (isset($_POST['Submit'])) {
         echo "verified";
         $_SESSION['LOGGED_USER'] = $response[1][0]['UUID'];
         
-        header("location:" . ROOT ."/mtush.php");
+        header("location:" . ROOT ."/Mtush.php");
         exit;
        }else{
          echo "Not verified";
