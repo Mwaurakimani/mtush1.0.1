@@ -39,11 +39,6 @@ if (isset($_POST['Submit'])) {
 
      $status = $response[0];
 
-     echo  $response[1][0]['username'];
-     echo  $response[1][0]['moderatorEmail'];
-     echo  $response[1][0]['password'];
-     exit();
-
      if($status){
        $dbuser = $response[1][0]['username'];
        $dbemail = $response[1][0]['moderatorEmail'];
