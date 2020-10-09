@@ -1,0 +1,26 @@
+.sys_input_element {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .input_element {
+        margin-left: 10px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        & input {
+            height: 100%;
+        }
+        & button {
+            height: 40px;
+            margin: 0;
+            border-radius: 0;
+        }
+        & select {
+            min-width: 200px;
+            height: 40px;
+        }
+    }
+}

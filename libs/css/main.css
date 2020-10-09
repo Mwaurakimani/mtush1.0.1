@@ -1,0 +1,1232 @@
+form {
+  width: 100%;
+  height: 90%;
+}
+
+form * {
+  box-sizing: border-box;
+}
+
+form h3 {
+  text-align: center;
+  padding-bottom: 16px;
+  padding-top: 8px;
+  font-weight: 700;
+}
+
+form .input_element {
+  border-radius: 5px;
+  width: 100%;
+  min-height: 45px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 2px solid grey;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+form .input_element input[type="text"] {
+  display: block;
+  width: calc(100% - 45px);
+  height: 43px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+
+form .input_element input[type="password"] {
+  display: block;
+  width: calc(100% - 45px);
+  height: 43px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+
+form .input_element input[type="email"] {
+  display: block;
+  width: calc(100% - 45px);
+  height: 43px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+
+form .input_element input[type="search"] {
+  display: block;
+  width: calc(100% - 10px);
+  height: 43px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+
+form .input_element .input_double_btn {
+  width: calc(100% - 90px) !important;
+}
+
+form .input_element button {
+  background-color: transparent;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+}
+
+form .input_element .display_input_error {
+  display: none;
+  height: 0;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 80%;
+  padding-left: 45px;
+  padding-bottom: 5px;
+  width: 100%;
+  color: red;
+}
+
+form .input_element .input_suggestion {
+  width: 100%;
+  background-color: greenyellow;
+}
+
+form .btn_icon {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+}
+
+form .btn_user {
+  background-image: url("http://mtushimports1.local/res/images/icons/user.png");
+}
+
+form .btn_view {
+  background-image: url("http://mtushimports1.local/res/images/icons/view.png");
+}
+
+form .btn_hide {
+  background-image: url("http://mtushimports1.local/res/images/icons/hide.png");
+}
+
+form .btn_email {
+  background-image: url("http://mtushimports1.local/res/images/icons/email.png");
+}
+
+form .btn_password {
+  background-image: url("http://mtushimports1.local/res/images/icons/password.png");
+}
+
+form .custom_selection {
+  height: 45px;
+  overflow: visible;
+}
+
+form .button_holder {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+form .action_redirect a {
+  padding-left: 20px;
+}
+
+.bnt_emulate {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  border-radius: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  border-radius: 3px;
+}
+
+.bread_crumbs {
+  width: 100%;
+  height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+}
+
+.bread_crumbs ul {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.bread_crumbs ul > .linker {
+  color: #8d8d8d;
+}
+
+.bread_crumbs ul > .linker:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #67bef1;
+}
+
+.bread_crumbs li {
+  display: inline-block;
+}
+
+.sys_input_element {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.sys_input_element .input_element {
+  margin-left: 10px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+.sys_input_element .input_element input {
+  height: 100%;
+}
+
+.sys_input_element .input_element button {
+  height: 40px;
+  margin: 0;
+  border-radius: 0;
+}
+
+.sys_input_element .input_element select {
+  min-width: 200px;
+  height: 40px;
+}
+
+.pagination {
+  width: calc(100% - 25px);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eff1f2;
+  padding-bottom: 20px;
+}
+
+.pagination ul {
+  border: 1px solid #bbbbbb;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination ul li {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #e4e4e4;
+  user-select: none;
+}
+
+.pagination ul li:hover {
+  background-color: #f14242;
+  color: white;
+  border: 1px solid #f14242;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #e45353;
+  background-color: #eb5a5a;
+}
+
+.custom-checkbox .custom-control-input:checked:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
+}
+
+.custom-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-control input {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.login_view {
+  padding-top: 30px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.login_view .login_section {
+  width: 100%;
+  height: 500px;
+}
+
+.login_view .login_section .image_show {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_view .login_section .image_show img {
+  width: 50%;
+}
+
+.login_view .login_section .login_form {
+  margin: auto;
+  width: 90%;
+}
+
+@media only screen and (min-width: 768px) {
+  .login_view {
+    padding: 0;
+  }
+  .login_view .login_section .image_show {
+    height: 350px;
+    background-image: url("http://mtushimports1.local/res/images/login_short.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .login_view .login_section .image_show img {
+    width: 50%;
+  }
+  .login_view .login_section .login_form {
+    background-color: transparent;
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  body,
+  html {
+    height: 100%;
+  }
+  .login_view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("http://mtushimports1.local/res/images/login_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .login_view .login_section {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    border-radius: 10px;
+  }
+  .login_view .login_section .image_show {
+    height: 100%;
+    background-image: url("http://mtushimports1.local/res/images/login_short.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+  }
+  .login_view .login_section .image_show img {
+    width: 50%;
+  }
+  .login_view .login_section .login_form {
+    background-color: transparent;
+    width: 350px;
+    padding-top: 20px;
+  }
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 3px 2px #c5c5c5;
+}
+
+nav .nav_logo {
+  width: 196px;
+  height: 100%;
+  padding: 5px;
+  padding-left: 20px;
+}
+
+nav .nav_logo img {
+  height: 100%;
+}
+
+nav .home_search_bar {
+  width: 400px;
+  height: 50px;
+}
+
+nav .home_search_bar form {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+nav .home_search_bar form .input_element {
+  position: relative;
+  width: 100%;
+}
+
+nav .home_search_bar form .input_element input {
+  padding: 5px;
+}
+
+nav .home_search_bar form .input_element .input_suggestion {
+  display: block;
+  width: 100%;
+  background-color: pink;
+  z-index: 20;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+nav .account_pannel {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .account_pannel .account_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #b4b4b4;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+nav .account_pannel .account_image img {
+  width: 35px;
+}
+
+nav .account_pannel .account_dropdown_pannel {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: -340px;
+  width: 400px;
+  background-color: white;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+  padding: 5px;
+  z-index: 100;
+}
+
+nav .account_pannel .account_dropdown_pannel .welcome_note {
+  width: 100%;
+  height: 40px;
+}
+
+nav .account_pannel .account_dropdown_pannel .welcome_note p {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 130%;
+  font-weight: 500;
+}
+
+nav .account_pannel .account_dropdown_pannel .user_option_panel {
+  width: 100%;
+  height: 500px;
+  background-color: pink;
+}
+
+nav .account_pannel .account_dropdown_pannel .user_option_panel .option_element {
+  width: 100%;
+  height: 50px;
+  background-color: red;
+}
+
+nav .account_pannel .account_dropdown_pannel .user_option_panel .option_element .btn_group {
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+nav .account_pannel .account_dropdown_pannel .user_option_panel .option_element .dropdown_elem {
+  width: 100%;
+  height: calc(500px - 50px);
+  background-color: brown;
+}
+
+body {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.system_body {
+  width: 100%;
+  height: calc(100vh - 56px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  flex-direction: row;
+}
+
+.system_body .side_panel {
+  width: 230px;
+  height: 100%;
+  background-color: #242629;
+  overflow-y: auto;
+}
+
+.system_body .side_panel .sidePanelPin {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.system_body .side_panel .btn_group {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.system_body .side_panel .btn_group h6 {
+  font-size: 120%;
+  padding-left: 15px;
+  font-weight: 600;
+  color: #dfdfdf;
+}
+
+.system_body .side_panel .btn_group .nav_btn {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border-left: solid 0px red;
+  cursor: pointer;
+  transition: all 0.3s;
+  user-select: none;
+}
+
+.system_body .side_panel .btn_group .nav_btn img {
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  border: none;
+  margin-left: 15px;
+}
+
+.system_body .side_panel .btn_group .nav_btn p {
+  font-size: 95%;
+  width: calc(100% - 100px);
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  height: 30px;
+  color: #c5c5c5;
+  line-height: 30px;
+  user-select: none;
+}
+
+.system_body .side_panel .btn_group .nav_btn:hover {
+  background-color: #1d1c1c;
+  border-left: solid 5px red;
+  transition: all 0.3s;
+}
+
+.system_body .main_panel {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.system_body .main_panel .Content {
+  padding-top: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #eff1f2;
+  padding-bottom: 20px;
+}
+
+.system_body .main_panel .content_view_header {
+  width: calc(100% - 16px);
+  margin: auto;
+  padding-left: 20px;
+  border: solid 1px #999999;
+  background-color: white;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+.system_body .main_panel .content_view_header h4 {
+  line-height: 40px;
+  color: #797979;
+  padding-left: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.system_body .main_panel .content_view_header .bread_crumbs {
+  padding-bottom: 10px;
+}
+
+.system_body .main_panel .content_view_options {
+  background-color: white;
+  width: calc(100% - 25px);
+  margin: auto;
+  height: 60px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 3px 1px #cccccc;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  overflow: visible;
+}
+
+.system_body .main_panel .content_view_options .action_buttons {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.system_body .main_panel .content_view_options .action_buttons button {
+  margin-left: 5px;
+}
+
+.system_body .main_panel .content_view_options .more_options_pannel {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  flex-wrap: wrap;
+  overflow: visible;
+}
+
+.system_body .main_panel .content_view_options .more_options_pannel .search_product_pos {
+  overflow: scroll;
+  background-color: #fff;
+  display: none;
+  opacity: 0;
+  z-index: 100;
+  position: absolute;
+  top: 150%;
+  flex: 0 0 auto;
+  width: 300%;
+  max-height: 500px;
+  margin-left: -50%;
+  border-radius: 3px;
+  box-shadow: 0 0 12px #888888;
+}
+
+.system_body .main_panel .content_view_options .more_options_pannel .search_product_pos table tbody tr:hover {
+  background-color: red;
+  color: white;
+}
+
+.system_body .main_panel .content_view_display_panel {
+  width: calc(100% - 25px);
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 3px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.system_body .main_panel .content_view_display_panel .user_change_password_pannel {
+  width: 100%;
+  height: calc(100% - 80px);
+  background-color: rgba(202, 202, 202, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.system_body .main_panel .content_view_display_panel .user_change_password_pannel .password_change_holder {
+  width: 400px;
+  height: 230px;
+  overflow: hidden;
+  box-shadow: 0 0 6px grey;
+  border-radius: 3px;
+}
+
+.system_body .main_panel .content_view_display_panel .user_change_password_pannel .password_change_holder h3 {
+  width: 100%;
+  height: 45px;
+  background-color: #ee1717;
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.system_body .main_panel .content_view_display_panel .user_change_password_pannel .password_change_holder p {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+  padding-top: 10px;
+}
+
+.system_body .main_panel .content_view_display_panel .user_change_password_pannel .password_change_holder .password_entry_region {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.system_body .main_panel .content_view_display_panel .user_change_password_pannel .password_change_holder .password_entry_region input {
+  width: 230px;
+  height: 45px;
+  text-align: center;
+}
+
+.system_body .main_panel .content_view_display_panel .user_change_password_pannel .password_change_holder button {
+  display: block;
+  margin: auto;
+  width: 150px;
+  height: 40px;
+  outline: none;
+  background-color: #ee1717;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+}
+
+.elemental {
+  z-index: 100;
+  width: 100vw;
+  height: calc(100% + 4px);
+  background-image: linear-gradient(90deg, rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7));
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.elemental .elemental_splashboard {
+  max-width: 500px;
+  max-height: 500px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 12px #494949;
+  margin-bottom: 5px;
+  overflow: auto;
+}
+
+.elemental button {
+  width: 100px;
+  height: 30px;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #e4e4e4;
+  border-radius: 3px;
+}
+
+.elemental button:hover {
+  text-decoration: none;
+  background-color: #cc5353;
+  color: white;
+}
+
+#updateUser {
+  visibility: hidden;
+}
+
+#deleteUser {
+  visibility: hidden;
+}
+
+.splashboard_1 {
+  width: 100%;
+  max-height: 70vh;
+  background-color: white;
+  overflow-y: auto;
+}
+
+.splashboard_1 .editUserAccountContainer {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.splashboard_1 .editUserAccountContainer .section_edit {
+  margin: auto;
+  width: 98%;
+  background-color: white;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 0 3px 2px #9e9e9e;
+  margin-bottom: 20px;
+}
+
+.splashboard_1 .editUserAccountContainer .section_edit h4 {
+  width: 100%;
+  padding-left: 10px;
+  line-height: 45px;
+  height: 50px;
+  background-color: #f64242;
+  color: white;
+}
+
+.splashboard_1 .editUserAccountContainer .section_edit .user_group_entry {
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.splashboard_1 .editUserAccountContainer .section_edit .user_group_entry .input_field_elem {
+  width: 100%;
+  height: 50px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.splashboard_1 .editUserAccountContainer .section_edit .user_group_entry .input_field_elem p {
+  width: 230px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 500;
+  color: grey;
+  padding: 0;
+  margin: 0;
+}
+
+.splashboard_1 .editUserAccountContainer .section_edit .user_group_entry .input_field_elem input {
+  width: 300px;
+  height: 40px;
+  padding-left: 5px;
+  border: solid 1px #a5a5a5;
+  border-radius: 3px;
+}
+
+.splashboard_1 .editUserAccountContainer .section_edit .user_group_entry .input_field_elem select {
+  width: 300px;
+  height: 40px;
+  padding-left: 5px;
+  border: solid 1px #a5a5a5;
+  border-radius: 3px;
+}
+
+.splashboard_1 .editUserAccountContainer .section_edit .user_group_entry .input_field_elem span {
+  color: red;
+  font-size: 130%;
+  margin-left: 10px;
+}
+
+.splashboard_1 .editUserAccountContainer .section_edit .user_group_entry .input_field_elem textarea {
+  width: 70%;
+}
+
+.section_edit .user_group_entry_1 {
+  display: inline-block;
+  width: 49.7%;
+  margin: 0;
+  padding: 0;
+  padding-left: 5px;
+  padding-bottom: 30px;
+}
+
+.section_edit .user_group_entry_1 .input_field_elem {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding-left: 20px;
+}
+
+.section_edit .user_group_entry_1 .input_field_elem p {
+  width: 230px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 500;
+  color: grey;
+  padding: 0;
+  margin: 0;
+}
+
+.section_edit .user_group_entry_1 .input_field_elem input {
+  width: 300px;
+  height: 40px;
+  padding-left: 5px;
+  border: solid 1px #a5a5a5;
+  border-radius: 3px;
+}
+
+.section_edit .user_group_entry_1 .input_field_elem select {
+  width: 300px;
+  height: 40px;
+  padding-left: 5px;
+  border: solid 1px #a5a5a5;
+  border-radius: 3px;
+}
+
+.section_edit .user_group_entry_1 .input_field_elem span {
+  color: red;
+  font-size: 130%;
+  margin-left: 10px;
+}
+
+.section_edit .user_group_entry_1 .input_field_elem .supplierDropBox {
+  display: none;
+  position: absolute;
+  z-index: 300;
+  width: 100%;
+  height: 300px;
+  background-color: aqua;
+}
+
+.section_edit .user_group_entry .vendor_logo_display {
+  position: relative;
+  top: 50px;
+  margin-left: 100px;
+  width: 150px;
+  height: 150px;
+  border: solid #adadad 1px;
+  border-radius: 5px;
+}
+
+.section_edit .user_group_entry .vendor_logo_display img {
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.deliverDetails {
+  padding-top: 20px;
+  margin: auto;
+  width: 98%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 6px #959595;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.deliverDetails .elem_body {
+  width: 100%;
+  height: 100%;
+}
+
+.deliverDetails .elem_body h5 {
+  text-align: center;
+  height: 30px;
+  color: #f07171;
+}
+
+.deliverDetails .elem_body .input_elem {
+  width: 100%;
+  height: 50px;
+}
+
+.deliverDetails .elem_body .input_elem input {
+  display: block;
+  margin: auto;
+  width: 250px;
+  height: 35px;
+  border-radius: 3px;
+  border: 1px solid grey;
+  padding-left: 5px;
+}
+
+.sales_body {
+  width: 98%;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.sales_body .sales_table {
+  width: 700px;
+  height: 1700px;
+}
+
+.sales_body .sales_details {
+  width: calc(100% - 700px);
+  height: 300px;
+  background-color: pink;
+  position: sticky;
+  top: 0;
+}
+
+.sales_body .items_elemnt {
+  overflow: hidden;
+  height: 100%;
+  width: 70%;
+  padding: 10px;
+}
+
+.sales_body .items_elemnt .sales_tbl_element {
+  overflow: auto;
+  padding: 0 5px;
+  box-shadow: 0 0 6px #959595;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px;
+}
+
+.sales_body .items_elemnt .sales_tbl_element .sale_item_remover_holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sales_body .items_elemnt .sales_tbl_element .sale_item_remover_holder .remove_item {
+  margin: 0;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  text-align: center;
+  border-radius: 50%;
+  color: #4d4d4d;
+}
+
+.sales_body .items_elemnt .sales_tbl_element .sale_item_remover_holder .remove_item:hover {
+  cursor: pointer;
+  background-color: #eb4b4b;
+  color: white;
+}
+
+.sales_body .items_elemnt .sales_tbl_element .listProductSelect {
+  display: none;
+  position: absolute;
+  width: 500px;
+  border: 1px solid grey;
+  background-color: white;
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+}
+
+.sales_body .items_elemnt .sales_tbl_element .listProductSelect > ul {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sales_body .items_elemnt .sales_tbl_element .listProductSelect > ul > li {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  width: 100%;
+}
+
+.sales_body .items_elemnt .sales_tbl_element .listProductSelect > ul > li:hover {
+  background-color: red;
+  color: white;
+}
+
+.sales_body .sale_details {
+  height: 100%;
+  width: 30%;
+  padding-top: 5px;
+}
+
+.sales_body .sale_details .sale_summary_label {
+  width: 200px;
+  padding-left: 30px;
+}
+
+.sales_body .sale_details .sale_summary_label > label {
+  padding: 3px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.sales_body .sale_details .sale_summary_label > p {
+  padding: 2px;
+  padding-left: 10px;
+  border: solid grey 1px;
+}
+
+.sales_body .sale_details .sale_summary_label > select {
+  display: block;
+  width: 100%;
+  padding: 4px;
+}
+
+.sales_body .sale_details .sale_summary_label button {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.sales_body .sales_table {
+  overflow: auto;
+  padding: 0 5px;
+  box-shadow: 0 0 6px #959595;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px;
+}
+
+.sales_body .sales_table .sale_item_remover_holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sales_body .sales_table .sale_item_remover_holder .remove_item {
+  margin: 0;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  text-align: center;
+  border-radius: 50%;
+  color: #4d4d4d;
+}
+
+.sales_body .sales_table .sale_item_remover_holder .remove_item:hover {
+  cursor: pointer;
+  background-color: #eb4b4b;
+  color: white;
+}
+
+.sales_body .sales_table .listProductSelect {
+  display: none;
+  position: absolute;
+  width: 500px;
+  border: 1px solid grey;
+  background-color: white;
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+}
+
+.sales_body .sales_table .listProductSelect > ul {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sales_body .sales_table .listProductSelect > ul > li {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  width: 100%;
+}
+
+.sales_body .sales_table .listProductSelect > ul > li:hover {
+  background-color: red;
+  color: white;
+}
+
+.sale_viewer {
+  width: 500px;
+  height: 500px;
+}
+
+.sale_viewer h2 {
+  width: 100%;
+  background-color: #e24f4f;
+  color: white;
+  font-size: 140%;
+  padding: 4px;
+  text-align: center;
+  height: 50px;
+}
+
+.sale_viewer .elem_holder {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+}
+
+.sale_viewer .elem_holder .title {
+  width: 100px;
+  height: 100%;
+  line-height: 35px;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+.sale_viewer .elem_holder p:nth-child(2) {
+  line-height: 35px;
+  padding-left: 5px;
+}
+
+.sale_viewer .sales_lister {
+  margin: auto;
+  width: 95%;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+  overflow: auto;
+  box-shadow: inset 0 0 10px #cecece;
+  padding: 10px;
+  overflow: auto;
+}
+
+.sale_viewer .sales_lister table tbody tr {
+  cursor: pointer;
+}
+/*# sourceMappingURL=main.css.map */

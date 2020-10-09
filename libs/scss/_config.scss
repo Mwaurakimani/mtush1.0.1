@@ -1,0 +1,7 @@
+$base-color: #eb3535;
+$domain:"http://mtushimports1.local/";
+$images: $domain+"res/images/";
+$icons: $domain+"res/images/icons/";
+@mixin transition {
+    transition: all 0.3s ease-in;
+}

@@ -1,0 +1,35 @@
+.pagination {
+    width: calc(100% - 25px);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eff1f2;
+    padding-bottom: 20px;
+    & ul {
+        border: 1px solid rgb(187, 187, 187);
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & li {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid rgb(228, 228, 228);
+            user-select: none;
+            &:hover {
+                background-color: rgb(241, 66, 66);
+                color: white;
+                border: 1px solid rgb(241, 66, 66);
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+// form element
+<form action="">
+    <h3>Sign in</h3>
+    <div class="input_element">
+        <button class="btn_icon"></button>
+        <input onfocus="focusInputElement()" onfocusout="focusOutInputElement()" type="text" name="" id="">
+        <div class="display_input_error">User name is invalid</div>
+        <div class="input_suggestion">
+
+        </div>
+    </div>
+    <div class="input_element ">
+        <button class="btn_icon"></button>
+        <input onfocus="focusInputElement()" onfocusout="focusOutInputElement()" type="text" name="" id="" class="input_double_btn">
+        <button class="btn_double_icon"></button>
+        <div class="display_input_error">User name is invalid</div>
+    </div>
+    <div class="input_element ">
+        <button class="btn_icon"></button>
+        <input onfocus="focusInputElement()" onfocusout="focusOutInputElement()" type="text" name="" id="">
+        <div class="display_input_error">User name is invalid</div>
+        <div class="input_suggestion">
+
+        </div>
+    </div>
+    <div class="button_holder">
+        <button type="submit" class="btn btn-primary">Sign In</button>
+        <button type="reset" class="btn btn-primary">Reset</button>
+    </div>
+    <div class="action_redirect">
+        <a href="">Forgot password</a>
+    </div>
+</form>
