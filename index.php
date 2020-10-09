@@ -35,7 +35,7 @@
     <div class="login_view">
         <div class="login_section">
             <div class="image_show">
-                <img src="logo.png" alt="">
+                <img src="Logo.png" alt="img">
             </div>
             <div class="login_form">
                 <form action="app/php/control/signin.php" method="POST">
