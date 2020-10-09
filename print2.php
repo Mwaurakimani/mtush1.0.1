@@ -1,4 +1,5 @@
 <?php
+
 include_once('app/php/Modal.php');
 ?>
 <!DOCTYPE html>
