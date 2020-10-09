@@ -24,7 +24,7 @@
     <!-- end libs -->
 
     <!-- site libs -->
-    <!-- <script data-main="libs/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script> -->
+    <script data-main="libs/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 
     <link rel="stylesheet" href="libs/css/main.css">
     <!-- end site libs -->
