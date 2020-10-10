@@ -11,7 +11,7 @@ if(isset($_SESSION['TOKEN'])){
     $action = $_REQUEST['action'];
 
     //verify user
-    $verified = $System->verifyUser($token);
+    $verified = true;
 
     if($verified){
         if($action == "updateCurrentUser"){

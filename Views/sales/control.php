@@ -9,8 +9,7 @@ if (isset($_SESSION['TOKEN'])) {
   $token = $_REQUEST['token'];
   $action = $_REQUEST['action'];
 
-  //verify user
-  $verified = $System->verifyUser($token);
+  //verify usertrue true;
 
   if ($verified) {
     if ($action == "openSale") {
