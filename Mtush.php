@@ -50,7 +50,7 @@ $_SESSION['TOKEN'] = 1234;
     </div>
     <nav>
         <div class="nav_logo">
-            <img src="logo.png" alt="">
+            <img src="Logo.png" alt="">
         </div>
         <div class="home_search_bar">
             <form action="">
@@ -113,7 +113,7 @@ $_SESSION['TOKEN'] = 1234;
                     <p>Customers</p>
                 </div>
                 <div class="nav_btn" onclick="renderContent('sales')">
-                    <img src="<?php echo IMAGES . "/icons/orders.png" ?>" alt="">
+                    <img src="<?php echo IMAGES . "icons/orders.png" ?>" alt="">
                     <p>Sales</p>
                 </div>
                 <div class="nav_btn" onclick="renderContent('transactions')">

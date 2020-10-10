@@ -5,7 +5,7 @@ const main_page = '/libs/js/System.js';
 const JQuery = 'https://code.jquery.com/jquery-3.5.1.min.js'
 
 //reload the site on save
-const live_page = '/libs/js/live.js';
+// const live_page = '/libs/js/live.js';
 
 //hooks
 const postHook = '/libs/js/hooks/post.js';
