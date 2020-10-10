@@ -37,7 +37,7 @@ if (isset($_SESSION['TOKEN'])) {
                 if($key == 'order'){
                     continue;
                 }
-                $data[$key] = $System->encodeToHTML($value);
+                $data[$key] = $value;
             }
 
             $fields = [
