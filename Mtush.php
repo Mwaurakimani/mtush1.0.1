@@ -113,7 +113,7 @@ $_SESSION['TOKEN'] = 1234;
                     <p>Customers</p>
                 </div>
                 <div class="nav_btn" onclick="renderContent('sales')">
-                    <img src="<?php echo IMAGES . "icons/orders.png" ?>" alt="">
+                    <img src="<?php echo IMAGES . "icons/Orders.png" ?>" alt="">
                     <p>Sales</p>
                 </div>
                 <div class="nav_btn" onclick="renderContent('transactions')">
