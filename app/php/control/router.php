@@ -18,7 +18,7 @@ if(isset($_SESSION['TOKEN'])){
         $parent = $variables[0];
         $mode = $variables[1];
     }
-
+    $System = new System();
     //verify user
     $verified = $System->verifyUser($token);
 
