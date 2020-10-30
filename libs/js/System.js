@@ -17,4 +17,4 @@ function getToken() {
 
     return token;
 }
-const root = "http://mtushimports1.local";
+const root = "http://mtushimports.local";
