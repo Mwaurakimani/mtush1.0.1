@@ -4,9 +4,6 @@ session_start();
 $jsonStr = file_get_contents("php://input"); //read the HTTP body.
 $json = json_decode($jsonStr);
 
-// var_dump($json);
-// exit();
-
 if ($json[0] != true) {
 ?>
     <p style="text-align: center;padding:20px;">No records found</p>

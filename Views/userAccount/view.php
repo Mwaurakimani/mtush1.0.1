@@ -12,9 +12,12 @@ set_include_path('control.php');
             </li>
         </ul>
     </div>
-    <div class="content_view_options" style="display:none">
+    <div class="content_view_options">
         <div class="action_buttons">
             <button type="button" class="btn btn-outline-danger" id="updateUser" onclick="updateUserAccount()">Update</button>
+        </div>
+        <div class="action_buttons">
+            <button type="button" class="btn btn-outline-danger" id="updateUser" onclick="updatePassword()">change Password</button>
         </div>
     </div>
 

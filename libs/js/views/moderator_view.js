@@ -47,7 +47,6 @@ function acccollector() {
         IdNumber: $('input[name$="IDNumber"]').val(),
         dateOfBirth: $('input[name$="dateOfBirth"]').val(),
         email: $('input[name$="email"]').val(),
-        password: $('input[name$="password"]').val(),
         phone1: $('input[name$="phone1"]').val(),
         phone2: $('input[name$="phone2"]').val(),
         address: $('input[name$="address"]').val(),
@@ -73,12 +72,13 @@ function updateUserAccount() {
     var data = acccollector();
 
     if (data != false) {
+
         var elem = $(".editUserAccountContainer");
 
         var user = elem.attr('data-id');
 
         if (user) {
-            var action = "update";
+            var action = "change";
             var handler = "control";
             var token = getToken();
 
@@ -99,26 +99,29 @@ function updateUserAccount() {
                 }
             }
         } else {
-            var action = "addUser";
-            var handler = "control";
-            var token = getToken();
+            // console.log("2");
+            // return
+            // var action = "addUser";
+            // var handler = "control";
+            // var token = getToken();
 
-            sendToUserAccountHandler(action, handler, data, callback, token, null);
+            // sendToUserAccountHandler(action, handler, data, callback, token, null);
 
-            function callback(resp) {
-                var res = JSON.parse(resp);
-                var response = res.response;
-                if ((res.status == true) && (res.User != null) && (res.User[0] == true)) {
-                    alert(response);
+            // function callback(resp) {
 
-                    var data = res.User[1][0];
+            //     var res = JSON.parse(resp);
+            //     var response = res.response;
+            //     if ((res.status == true) && (res.User != null) && (res.User[0] == true)) {
+            //         alert(response);
 
-                    updateFields(data);
+            //         var data = res.User[1][0];
 
-                } else {
-                    alert("Error Adding User.Please Contact Administrator to resolve this issue.");
-                }
-            }
+            //         updateFields(data);
+
+            //     } else {
+            //         alert("Error Adding User.Please Contact Administrator to resolve this issue.");
+            //     }
+            // }
         }
 
     } else {

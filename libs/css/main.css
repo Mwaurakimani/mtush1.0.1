@@ -1049,6 +1049,88 @@ body {
   width: 70%;
 }
 
+.editUserAccountContainer {
+  width: 100%;
+  height: 800px;
+  padding-top: 20px;
+}
+
+.editUserAccountContainer .section_edit {
+  margin: auto;
+  width: 98%;
+  background-color: white;
+  border-radius: 3px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 3px 2px #9e9e9e;
+          box-shadow: 0 0 3px 2px #9e9e9e;
+  margin-bottom: 20px;
+}
+
+.editUserAccountContainer .section_edit h4 {
+  width: 100%;
+  padding-left: 10px;
+  line-height: 45px;
+  height: 50px;
+  background-color: #f64242;
+  color: white;
+}
+
+.editUserAccountContainer .section_edit .user_group_entry {
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.editUserAccountContainer .section_edit .user_group_entry .input_field_elem {
+  width: 100%;
+  height: 50px;
+  padding-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.editUserAccountContainer .section_edit .user_group_entry .input_field_elem p {
+  width: 230px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 500;
+  color: grey;
+  padding: 0;
+  margin: 0;
+}
+
+.editUserAccountContainer .section_edit .user_group_entry .input_field_elem input {
+  width: 300px;
+  height: 40px;
+  padding-left: 5px;
+  border: solid 1px #a5a5a5;
+  border-radius: 3px;
+}
+
+.editUserAccountContainer .section_edit .user_group_entry .input_field_elem select {
+  width: 300px;
+  height: 40px;
+  padding-left: 5px;
+  border: solid 1px #a5a5a5;
+  border-radius: 3px;
+}
+
+.editUserAccountContainer .section_edit .user_group_entry .input_field_elem span {
+  color: red;
+  font-size: 130%;
+  margin-left: 10px;
+}
+
+.editUserAccountContainer .section_edit .user_group_entry .input_field_elem textarea {
+  width: 70%;
+}
+
 .section_edit .user_group_entry_1 {
   display: inline-block;
   width: 49.7%;

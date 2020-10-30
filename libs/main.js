@@ -24,8 +24,8 @@ const moderator = '/libs/js/views/moderator_view.js';
 
 require([
     main_page,
-    // live_page,
-    //hooks
+    live_page,
+    // hooks,
     postHook,
     printHook,
     // views
@@ -35,7 +35,8 @@ require([
     vendorView,
     catalogueView,
     pointOfSale,
-    viewSales
+    viewSales,
+    moderator
 
 ], function() {
     $(document).ready(function() {

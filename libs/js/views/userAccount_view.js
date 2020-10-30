@@ -6,14 +6,15 @@ function verify_user() {
         alert("Password field cannot be empty");
     } else {
         var token = getToken();
-        var action = "updateCurrentUser";
+        var action = "openUser";
         var handler = "control";
         var data = password;
 
         sendToUserAccountHandler(action, handler, data, callback, token, null)
 
         function callback(data) {
-            console.log(data);
+            var elem1 = $(".content_view_display_panel");
+            elem1.html(data);
         }
     }
 }

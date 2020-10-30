@@ -1,10 +1,22 @@
 <?php
+include_once "../../app/php/Modal.php";
 set_include_path('control.php');
 
-$mode = $_SESSION['mode'];
+if(file_get_contents("php://input")){
+  $jsonStr = file_get_contents("php://input"); //read the HTTP body.
+  $json = json_decode($jsonStr);
+}
+
+$mode = $json[1];
+
+if($mode == "update"){
+  $user = $json[0];
+}else{
+  return;
+}
 $update = false;
 
-if (($mode == "update") && (isset($_SESSION['itemVariable']))) {
+if (($mode == "update") && ($user)) {
   $userDetails = new userAccount();
 
   $table = 'tbl_moderators';
@@ -16,7 +28,7 @@ if (($mode == "update") && (isset($_SESSION['itemVariable']))) {
   $type = "i";
 
   $reference = [
-    array("UUID", $_SESSION['itemVariable']),
+    array("UUID", $user),
   ];
   $userDetails = $userDetails->readUserByReference($moderator,$table, $reference ,$fields ,$type);
   if ($userDetails[1] == true) {
@@ -103,14 +115,6 @@ if (($mode == "update") && (isset($_SESSION['itemVariable']))) {
                                                 }
                                                 ?>">
         <span>*</span>
-      </div>
-      <div class="input_field_elem">
-        <p>Password</p>
-        <input type="password" name="password" value="<?php
-                                                      if ($update) {
-                                                        echo "00000";
-                                                      }
-                                                      ?>">
       </div>
       <div class="input_field_elem">
         <p>Phone 1</p>
