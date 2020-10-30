@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "myDB";
+$username = "mtushimp_moderator";
+$password = "Mtush123456";
+$dbname = "mtushimp_maindatabase";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -12,3 +12,4 @@ if ($conn->connect_error) {
 }else{
     var_dump($conn);
 }
+
