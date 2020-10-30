@@ -67,6 +67,7 @@ if(isset($_SESSION['TOKEN'])){
             
             exit();
         }elseif($action == "change"){
+            $System = new System();
             foreach ($data as $key => $value) {
                 $data[$key] = $System->encodeToHTML($value);
             }
