@@ -112,23 +112,23 @@ form .btn_icon {
 }
 
 form .btn_user {
-  background-image: url("http://mtushimports.local/res/images/icons/user.png");
+  background-image: url("http://mtushimports.com/res/images/icons/user.png");
 }
 
 form .btn_view {
-  background-image: url("http://mtushimports.local/res/images/icons/view.png");
+  background-image: url("http://mtushimports.com/res/images/icons/view.png");
 }
 
 form .btn_hide {
-  background-image: url("http://mtushimports.local/res/images/icons/hide.png");
+  background-image: url("http://mtushimports.com/res/images/icons/hide.png");
 }
 
 form .btn_email {
-  background-image: url("http://mtushimports.local/res/images/icons/email.png");
+  background-image: url("http://mtushimports.com/res/images/icons/email.png");
 }
 
 form .btn_password {
-  background-image: url("http://mtushimports.local/res/images/icons/password.png");
+  background-image: url("http://mtushimports.com/res/images/icons/password.png");
 }
 
 form .custom_selection {
@@ -383,7 +383,7 @@ form .action_redirect a {
   }
   .login_view .login_section .image_show {
     height: 350px;
-    background-image: url("http://mtushimports.local/res/images/login_short.jpeg");
+    background-image: url("http://mtushimports.com/res/images/login_short.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -412,7 +412,7 @@ form .action_redirect a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    background-image: url("http://mtushimports.local/res/images/login_bg.jpg");
+    background-image: url("http://mtushimports.com/res/images/login_bg.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -433,7 +433,7 @@ form .action_redirect a {
   }
   .login_view .login_section .image_show {
     height: 100%;
-    background-image: url("http://mtushimports.local/res/images/login_short.jpeg");
+    background-image: url("http://mtushimports.com/res/images/login_short.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
