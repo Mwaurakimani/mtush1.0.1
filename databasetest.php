@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "mtushimp_moderator";
-$password = "Mtush123456";
+$username = "mtushimp_moderator1";
+$password = "Mtushimports2675";
 $dbname = "mtushimp_maindatabase";
 
 // Create connection
