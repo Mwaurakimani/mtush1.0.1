@@ -4,6 +4,7 @@ require_once "../../app/php/Modal.php";
 session_start();
 
 if(isset($_SESSION['TOKEN'])){
+    $System = new System();
 
     //get the sent data
     $data = $_REQUEST['data'];
@@ -67,7 +68,7 @@ if(isset($_SESSION['TOKEN'])){
             
             exit();
         }elseif($action == "change"){
-            $System = new System();
+            
             foreach ($data as $key => $value) {
                 $data[$key] = $System->encodeToHTML($value);
             }
