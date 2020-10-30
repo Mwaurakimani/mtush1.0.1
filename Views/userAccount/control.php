@@ -16,7 +16,7 @@ if(isset($_SESSION['TOKEN'])){
 
     if($verified){
         if($action == "openUser"){
-            $data = $System->encodeToHTML($data);
+            $data = htmlentities($data);
             $Products = new products();
 
             $table = 'tbl_moderators';
@@ -70,7 +70,7 @@ if(isset($_SESSION['TOKEN'])){
         }elseif($action == "change"){
             
             foreach ($data as $key => $value) {
-                $data[$key] = $System->encodeToHTML($value);
+                $data[$key] = htmlentities($value);
             }
             $userAccount = new userAccount();
 
