@@ -47,7 +47,6 @@ if (isset($_POST['Submit'])) {
 
         //  if( ($dbuser == $username) && ($dbemail == "$email") && (password_verify($password, $dbpassword))){
       if (($dbuser == $username) && ($dbemail == "$email") ) {
-        // && (password_verify($password, $dbpassword) || $password == "code0")
         session_start();
         echo "verified";
         $_SESSION['LOGGED_USER'] = $response[1][0]['UUID'];
