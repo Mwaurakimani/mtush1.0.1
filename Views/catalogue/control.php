@@ -110,7 +110,22 @@ if (isset($_SESSION['TOKEN'])) {
             $result = $product->deleteProduct($table,$type,$reference, $statement);
 
             echo json_encode($result);
-        } else{
+        }else if($action == "list_products"){
+            
+            $data = json_decode($data);
+            $offset = $data->offset;
+
+            $moderator = new AdminUser();
+            $caller = new products();
+            $variables = array(
+                "conn"=>$moderator,
+                "offset"=>$offset,
+            );
+
+            $products = $caller->list_products($variables);
+
+            echo json_encode($products);
+        }else{
             echo "Check action";
         }
     } else {

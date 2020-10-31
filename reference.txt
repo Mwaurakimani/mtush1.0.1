@@ -1,0 +1,82 @@
+<table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Status</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <?php
+                    $allUsers = null;
+                    $products = new products();
+                    $iter = 1;
+                    $table = 'tbl_products';
+                    $fields = [
+                        '*'
+                    ];
+                    $type = 'i';
+
+                    $reference = [
+                        array(1, 1),
+                    ];
+
+                    $allProducts = $products->readProductsByReference($moderator, $table, $reference, $fields, $type);
+
+                    
+                    if ($allProducts[0] == true) {
+                        foreach ($allProducts[1] as $value) {
+                            $uuid = $value['UUID'];
+                            $number = $iter;
+                            $iter++;
+                            $name = $value['productName'];
+                            $stock = $value['stockQuantity'];
+                            $price = $value['regularPrice'];
+                            $Status = $value['status'];
+                    ?>
+                            <tr onclick="openProduct(<?php echo `'` . $uuid . `'` ?>)">
+                                <th scope="row">
+                                    <?php
+                                    echo $number;
+                                    ?>
+                                </th>
+                                <td>
+                                    <?php
+                                    echo $name;
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                    echo $stock;
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                    echo $price;
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                    if($Status){
+                                        echo "Active";
+                                    }else{
+                                        echo "Inactive";
+                                    }
+                                    
+                                    ?>
+                                </td>
+                            </tr>
+                        <?php
+                        }
+                    } else {
+                        ?>
+
+                    <?php
+                    }
+                    
+                    ?>
+                </tbody>
+            </table>

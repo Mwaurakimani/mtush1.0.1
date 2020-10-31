@@ -306,6 +306,11 @@ form .action_redirect a {
   border: 1px solid #f14242;
 }
 
+.pagination .active_page {
+  background-color: red;
+  color: white;
+}
+
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   border-color: #e45353;
   background-color: #eb5a5a;
@@ -335,6 +340,10 @@ form .action_redirect a {
   display: block;
   margin: 0;
   padding: 0;
+}
+
+table .clickable {
+  cursor: pointer;
 }
 
 .login_view {

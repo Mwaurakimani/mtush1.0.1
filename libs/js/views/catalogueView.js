@@ -189,3 +189,133 @@ function deleteProduct() {
 function searchProductCatalog() {
     alert("Hellow world");
 }
+
+function change_page() {
+    var elem = $(".pagination");
+    var current_page_elem = elem.find(".active_page");
+    var current_page_number = current_page_elem.text();
+
+    //total number of pages
+    var all_pages_elem = elem.find("li");
+    var counter = 0;
+
+    $.each(all_pages_elem, function(key, val) {
+        if ($(val).text() != "<<" && $(val).text() != ">>") {
+            counter++;
+        }
+    });
+
+    var total_page_count = counter;
+
+
+
+    // change the page on click
+    var clicked_elem = event.target;
+    var page_number_clicked = $(clicked_elem).text();
+
+    if (page_number_clicked != "<<" && page_number_clicked != ">>") {
+
+        $.each(all_pages_elem, function(key, val) {
+            $(val).removeClass("active_page");
+
+            if (page_number_clicked == $(val).text()) {
+                $(val).addClass("active_page");
+            }
+        });
+
+    } else if (page_number_clicked == "<<") {
+        var current_page_elem = elem.find(".active_page");
+        var current_page_number = current_page_elem.text();
+
+        $.each(all_pages_elem, function(key, val) {
+            $(val).removeClass("active_page");
+
+            if (parseInt($(val).text()) == (parseInt(current_page_number) - 1)) {
+                $(val).addClass("active_page");
+            }
+        });
+    } else if (page_number_clicked == ">>") {
+        var current_page_elem = elem.find(".active_page");
+        var current_page_number = current_page_elem.text();
+
+        $.each(all_pages_elem, function(key, val) {
+            $(val).removeClass("active_page");
+
+            if (parseInt($(val).text()) == (parseInt(current_page_number) + 1)) {
+                $(val).addClass("active_page");
+            }
+        });
+    }
+
+    var current_page_elem = elem.find(".active_page");
+    var current_page_number = current_page_elem.text();
+    // get next page
+    var next_page = parseInt(current_page_number) + 1;
+    var prev_page = parseInt(current_page_number) - 1;
+
+    if (next_page > total_page_count) {
+        $(".next_page_toggle").css("display", "none");
+    } else {
+        $(".next_page_toggle").css("display", "block");
+    }
+
+    //previous page
+    if (prev_page < 1) {
+        $(".previous_page_toggle").css("display", "none");
+    } else {
+        $(".previous_page_toggle").css("display", "block");
+    }
+
+    var offset = 10 * (parseInt(current_page_number) - 1)
+
+    var action = "list_products";
+    var handler = "control";
+    var token = getToken();
+    var data = JSON.stringify({
+        "offset": offset
+    });
+
+    sendToCatalogueHandler(action, handler, data, callback, token, null);
+
+
+
+    function callback(msg) {
+        var data = JSON.parse(msg);
+        var status = data[0];
+
+        if (status != true) {
+            alert("No products found");
+        } else {
+            $(".table tbody").html("");
+
+            var full_string = "";
+            var counter = 1;
+
+            $.each(data[1], function(key, val) {
+
+                console.log(val);
+
+                var uuid = val.UUID;
+                var productName = val.productName;
+                var stockQuantity = val.stockQuantity;
+                var regularPrice = val.regularPrice;
+                var status = val.status;
+
+                var paste_string = `
+                <tr onclick="openProduct(` + uuid + `) class="clickable">
+                    <td>` + counter + `</td>
+                    <td>` + productName + `</td>
+                    <td>` + stockQuantity + `</td>
+                    <td>` + regularPrice + `</td>
+                    <td>` + status + `</td>
+                </tr>
+                `
+                full_string = full_string + paste_string;
+                counter++
+            });
+
+            $(".table tbody").html(full_string);
+        }
+    }
+
+}

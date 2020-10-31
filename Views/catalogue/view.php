@@ -37,6 +37,18 @@ set_include_path('control.php');
 
     <div class="content_view_display_panel">
         <div class="splashboard_1">
+            <?php
+            $moderator = new AdminUser();
+            $caller = new products();
+            $variables = array(
+                "conn"=>$moderator,
+                "offset"=>0,
+            );
+
+            $products = $caller->list_products($variables);
+
+            // var_dump($products);
+            ?>
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
@@ -46,76 +58,35 @@ set_include_path('control.php');
                         <th scope="col">Price</th>
                         <th scope="col">Status</th>
                     </tr>
-
                 </thead>
                 <tbody>
                     <?php
-                    $allUsers = null;
-                    $products = new products();
-                    $iter = 1;
-                    $table = 'tbl_products';
-                    $fields = [
-                        '*'
-                    ];
-                    $type = 'i';
-
-                    $reference = [
-                        array(1, 1),
-                    ];
-
-                    $allProducts = $products->readProductsByReference($moderator, $table, $reference, $fields, $type);
-
-                    
-                    if ($allProducts[0] == true) {
-                        foreach ($allProducts[1] as $value) {
+                    $tally = 1;
+                        foreach($products[1] as $value){
+                            // var_dump($value);
+                            
                             $uuid = $value['UUID'];
-                            $number = $iter;
-                            $iter++;
-                            $name = $value['productName'];
-                            $stock = $value['stockQuantity'];
-                            $price = $value['regularPrice'];
+                            $Name = $value['productName'];
+                            $Stock = $value['stockQuantity'];
+                            $Price = $value['regularPrice'];
                             $Status = $value['status'];
+                        
                     ?>
-                            <tr onclick="openProduct(<?php echo `'` . $uuid . `'` ?>)">
-                                <th scope="row">
-                                    <?php
-                                    echo $number;
-                                    ?>
-                                </th>
-                                <td>
-                                    <?php
-                                    echo $name;
-                                    ?>
-                                </td>
-                                <td>
-                                    <?php
-                                    echo $stock;
-                                    ?>
-                                </td>
-                                <td>
-                                    <?php
-                                    echo $price;
-                                    ?>
-                                </td>
-                                <td>
-                                    <?php
-                                    if($Status){
-                                        echo "Active";
-                                    }else{
-                                        echo "Inactive";
-                                    }
-                                    
-                                    ?>
-                                </td>
-                            </tr>
-                        <?php
+                    <tr onclick="openProduct(<?php echo `'` . $uuid . `'` ?>)" class="clickable">
+                        <td><?php echo $tally ?></td>
+                        <td><?php echo $Name ?></td>
+                        <td><?php echo $Stock ?></td>
+                        <td><?php echo $Price ?></td>
+                        <td><?php if($Status == 1){
+                            echo "active";
+                        }else{
+                            echo "Inactive";
                         }
-                    } else {
-                        ?>
-
+                         ?></td>
+                    </tr>
                     <?php
+                        $tally++;
                     }
-                    
                     ?>
                 </tbody>
             </table>
@@ -124,13 +95,23 @@ set_include_path('control.php');
 
     <div class="pagination">
         <ul>
-            <li>&lt;&lt;</li>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>&gt;&gt;</li>
+            <?php
+                $products = $caller->product_counter($moderator);
+                $total = $products['COUNT(*)'];
+                $total_page_couunt = (intdiv($total,10)) + 1;
+            ?>
+            <li class="previous_page_toggle" onclick="change_page()" style="display: none;">&lt;&lt;</li>
+            <?php
+
+            for($iter = 1;$iter <= $total_page_couunt; $iter++){
+            ?>
+            <li onclick="change_page()" <?php if($iter == "1"){ echo 'class="active_page"';} ?> ><?php echo $iter ?></li>
+            <?php
+            }
+            ?>
+            <!-- <li class="active_page">1</li> -->
+            <li class="next_page_toggle" onclick="change_page()" >&gt;&gt;</li>
         </ul>
     </div>
 </section>
+
