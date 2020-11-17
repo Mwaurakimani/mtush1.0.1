@@ -64,8 +64,8 @@ if(isset($_SESSION['TOKEN'])){
                 );
             }
 
-        }elseif($action == "update"){
-            
+        }elseif($action == "update_password"){
+            echo "hellow";
             exit();
         }elseif($action == "change"){
             

@@ -1525,4 +1525,45 @@ body {
 .sale_viewer .sales_lister table tbody tr {
   cursor: pointer;
 }
+
+.catalogue_sort_options {
+  padding: 0;
+  width: 98%;
+  height: 60px;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: white;
+  -webkit-box-shadow: 0 0 4px 1px #d5d5d5;
+          box-shadow: 0 0 4px 1px #d5d5d5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.catalogue_sort_options .input_element_holder {
+  width: 200px;
+  height: 56px;
+  display: inline-block;
+  margin: 2px;
+  margin-top: 0px;
+}
+
+.catalogue_sort_options .input_element_holder p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.catalogue_sort_options .input_element_holder select {
+  width: 150px;
+  display: block;
+  margin: auto;
+}
 /*# sourceMappingURL=main.css.map */

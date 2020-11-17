@@ -60,7 +60,7 @@ class products extends System
         $temp_arry = [];
         $conn = $data['conn']->getconnection();
         
-        if ($stmt = $conn->prepare("SELECT * FROM tbl_products ORDER BY productName ASC LIMIT 10 OFFSET $offset")) {
+        if ($stmt = $conn->prepare("SELECT * FROM tbl_products ORDER BY productName ASC LIMIT 25 OFFSET $offset")) {
             $stmt->execute();
             $result = $stmt->get_result();
 

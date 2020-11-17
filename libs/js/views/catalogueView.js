@@ -266,7 +266,7 @@ function change_page() {
         $(".previous_page_toggle").css("display", "block");
     }
 
-    var offset = 10 * (parseInt(current_page_number) - 1)
+    var offset = 25 * (parseInt(current_page_number) - 1)
 
     var action = "list_products";
     var handler = "control";
@@ -292,9 +292,6 @@ function change_page() {
             var counter = 1;
 
             $.each(data[1], function(key, val) {
-
-                console.log(val);
-
                 var uuid = val.UUID;
                 var productName = val.productName;
                 var stockQuantity = val.stockQuantity;

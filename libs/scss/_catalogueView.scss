@@ -1,0 +1,30 @@
+.catalogue_sort_options {
+    padding: 0;
+    width: 98%;
+    height: 60px;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: 0 0 4px 1px rgb(213, 213, 213);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    & .input_element_holder {
+        width: 200px;
+        height: 56px;
+        display: inline-block;
+        margin: 2px;
+        margin-top: 0px;
+        & p {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            margin-bottom: 2px;
+        }
+        & select {
+            width: 150px;
+            display: block;
+            margin: auto;
+        }
+    }
+}

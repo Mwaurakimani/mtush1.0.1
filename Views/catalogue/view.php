@@ -34,6 +34,33 @@ set_include_path('control.php');
             </div>
         </div>
     </div>
+    <div class="catalogue_sort_options">
+        <div class="input_element_holder">
+           <p>Country</p>
+           <select name="" id="">
+               <option value="">Germany</option>
+               <option value="">Italy</option>
+               <option value="">China</option>
+               <option value="">Canada</option>
+               <option value="">UK</option>
+           </select>
+        </div>
+        <div class="input_element_holder">
+            <p>Time</p>
+            <select name="" id="">
+                <option value="">Day</option>
+                <option value="">Week</option>
+                <option value="">Month</option>
+            </select>
+        </div>
+        <div class="input_element_holder">
+            <p>Status</p>
+            <select name="" id="">
+                <option value="">Active</option>
+                <option value="">Inactive</option>
+            </select>
+        </div>
+    </div>
 
     <div class="content_view_display_panel">
         <div class="splashboard_1">
@@ -98,7 +125,7 @@ set_include_path('control.php');
             <?php
                 $products = $caller->product_counter($moderator);
                 $total = $products['COUNT(*)'];
-                $total_page_couunt = (intdiv($total,10)) + 1;
+                $total_page_couunt = (intdiv($total,25)) + 1;
             ?>
             <li class="previous_page_toggle" onclick="change_page()" style="display: none;">&lt;&lt;</li>
             <?php
