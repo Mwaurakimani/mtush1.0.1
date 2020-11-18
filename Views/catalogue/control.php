@@ -158,6 +158,28 @@ if (isset($_SESSION['TOKEN'])) {
 
                 echo json_encode($all_products);
             }
+        }else if($action == "searchProduct"){
+            if(!isset($data)){
+                $reposce = array(
+                    "status"=>false,
+                    "response"=>"No product matches your criteria"
+                );
+            }else{
+                
+                $Products = new products();
+
+                $table = 'tbl_products';
+    
+                $statement = "productName LIKE CONCAT('%',?,'%') AND  status = ?";
+    
+                $type = "si";
+    
+                $values = [$data,1];
+    
+                $result = $moderator->searcher($table, $statement, $type, $values);
+
+                echo json_encode($result);
+            }
         }else{
             echo "Check action";
         }

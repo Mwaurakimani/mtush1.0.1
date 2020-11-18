@@ -31,3 +31,88 @@
         <a href="">Forgot password</a>
     </div>
 </form>
+
+
+
+
+
+
+<div class="content_view_display_panel">
+        <div class="splashboard_1">
+            <?php
+            $moderator = new AdminUser();
+            $caller = new products();
+            $variables = array(
+                "conn"=>$moderator,
+                "offset"=>0,
+            );
+
+            $products = $caller->list_products($variables);
+            $array_of_products = $products[1];
+
+            // var_dump($products);
+            ?>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $tally = 1;
+                        foreach((array)$array_of_products as $value){
+                            // var_dump($value);
+                            
+                            $uuid = $value['UUID'];
+                            $Name = $value['productName'];
+                            $Stock = $value['stockQuantity'];
+                            $Price = $value['regularPrice'];
+                            $Status = $value['status'];
+                        
+                    ?>
+                    <tr onclick="openProduct(<?php echo `'` . $uuid . `'` ?>)" class="clickable">
+                        <td><?php echo $tally ?></td>
+                        <td><?php echo $Name ?></td>
+                        <td><?php echo $Stock ?></td>
+                        <td><?php echo $Price ?></td>
+                        <td><?php if($Status == 1){
+                            echo "active";
+                        }else{
+                            echo "Inactive";
+                        }
+                         ?></td>
+                    </tr>
+                    <?php
+                        $tally++;
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="pagination">
+        <ul>
+            <?php
+                $products = $caller->product_counter($moderator);
+                $total = $products['COUNT(*)'];
+                $total_page_couunt = (intdiv($total,25)) + 1;
+            ?>
+            <li class="previous_page_toggle" onclick="change_page()" style="display: none;">&lt;&lt;</li>
+            <?php
+
+            for($iter = 1;$iter <= $total_page_couunt; $iter++){
+            ?>
+            <li onclick="change_page()" <?php if($iter == "1"){ echo 'class="active_page"';} ?> ><?php echo $iter ?></li>
+            <?php
+            }
+            ?>
+            <!-- <li class="active_page">1</li> -->
+            <li class="next_page_toggle" onclick="change_page()" >&gt;&gt;</li>
+        </ul>
+    </div>

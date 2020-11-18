@@ -47,21 +47,6 @@ set_include_path('control.php');
                <option value="UK">UK</option>
            </select>
         </div>
-        <div class="input_element_holder">
-            <p>Time</p>
-            <select name="" id="">
-                <option value="">Day</option>
-                <option value="">Week</option>
-                <option value="">Month</option>
-            </select>
-        </div>
-        <div class="input_element_holder">
-            <p>Status</p>
-            <select name="" id="">
-                <option value="">Active</option>
-                <option value="">Inactive</option>
-            </select>
-        </div>
     </div>
 
     <div class="content_view_display_panel">

@@ -187,7 +187,56 @@ function deleteProduct() {
 }
 
 function searchProductCatalog() {
-    alert("Hellow world");
+    var elem = $(event.target);
+    var search = elem.val();
+
+    var user = elem.attr('data-id');
+
+    if (isEmpty(search)) {
+        console.log("is empty");
+    } else {
+        var action = "searchProduct";
+        var handler = "control";
+        var token = getToken();
+        var data = search;
+
+        sendToCatalogueHandler(action, handler, data, callback, token, null);
+
+        function callback(resp) {
+            var data = JSON.parse(resp);
+            var full_string = "";
+            var counter = 1;
+
+            if (data[0]) {
+                // console.log(data[1]);
+
+                $.each(data[1], function(key, val) {
+                    var uuid = val.UUID;
+                    var productName = val.productName;
+                    var stockQuantity = val.stockQuantity;
+                    var regularPrice = val.regularPrice;
+                    var status = val.status;
+
+                    var paste_string = `
+                    <tr onclick="openProduct(` + uuid + `)" class="clickable">
+                        <td>` + counter + `</td>
+                        <td>` + productName + `</td>
+                        <td>` + stockQuantity + `</td>
+                        <td>` + regularPrice + `</td>
+                        <td>` + status + `</td>
+                    </tr>
+                    `
+                    full_string = full_string + paste_string;
+                    counter++
+                });
+
+            } else {
+                alert("No results Found");
+            }
+            $(".table tbody").html(full_string);
+            $(".pagination").css("display", "none");
+        }
+    }
 }
 
 function change_page() {
