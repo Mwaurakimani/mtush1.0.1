@@ -27,8 +27,9 @@ set_include_path('control.php');
             </div>
             <div class="sys_input_element">
                 <div class="input_element">
-                    <select name="sort" id="" placeholder="Sort">
+                    <select name="sort" id="" placeholder="Sort" onchange="sort_setter()" onload="sort_setter(false)">
                         <option value="sort">Sort</option>
+                        <option selected value="unSort">Un-sort</option>
                     </select>
                 </div>
             </div>
@@ -37,12 +38,13 @@ set_include_path('control.php');
     <div class="catalogue_sort_options">
         <div class="input_element_holder">
            <p>Country</p>
-           <select name="" id="">
-               <option value="">Germany</option>
-               <option value="">Italy</option>
-               <option value="">China</option>
-               <option value="">Canada</option>
-               <option value="">UK</option>
+           <select name="" id="" onchange="filter_countries()">
+               <option value="N/A">N/A</option>
+               <option value="Germany">Germany</option>
+               <option value="Italy">Italy</option>
+               <option value="China">China</option>
+               <option value="Canada">Canada</option>
+               <option value="UK">UK</option>
            </select>
         </div>
         <div class="input_element_holder">
@@ -73,6 +75,7 @@ set_include_path('control.php');
             );
 
             $products = $caller->list_products($variables);
+            $array_of_products = $products[1];
 
             // var_dump($products);
             ?>
@@ -89,7 +92,7 @@ set_include_path('control.php');
                 <tbody>
                     <?php
                     $tally = 1;
-                        foreach($products[1] as $value){
+                        foreach((array)$array_of_products as $value){
                             // var_dump($value);
                             
                             $uuid = $value['UUID'];

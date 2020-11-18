@@ -125,6 +125,39 @@ if (isset($_SESSION['TOKEN'])) {
             $products = $caller->list_products($variables);
 
             echo json_encode($products);
+        }else if($action == "filter_country"){
+            $data = json_decode($data);
+
+            $country = $data->country;
+
+            if($country == "N/A"){
+                $country = null;
+            }
+
+            $moderator = new AdminUser();
+            $caller = new products();
+            $variables = array(
+                "conn"=>$moderator,
+                "country"=>$country,
+            );
+
+            $products = $caller->filter_products($variables);
+
+            if($products[0]){
+                $all_products = array(
+                    "status"=>true,
+                    "products" => $products[1]
+                );
+
+                echo json_encode($all_products);
+            }else{
+                $all_products = array(
+                    "status"=>false,
+                    "response" => "No products matched your criteria"
+                );
+
+                echo json_encode($all_products);
+            }
         }else{
             echo "Check action";
         }

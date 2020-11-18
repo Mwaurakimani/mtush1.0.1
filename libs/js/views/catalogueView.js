@@ -299,7 +299,7 @@ function change_page() {
                 var status = val.status;
 
                 var paste_string = `
-                <tr onclick="openProduct(` + uuid + `) class="clickable">
+                <tr onclick="openProduct(` + uuid + `)" class="clickable">
                     <td>` + counter + `</td>
                     <td>` + productName + `</td>
                     <td>` + stockQuantity + `</td>
@@ -311,8 +311,85 @@ function change_page() {
                 counter++
             });
 
+            $(".pagination").css("display", "flex");
+
             $(".table tbody").html(full_string);
         }
     }
 
+}
+
+function filter_countries() {
+    var elem = $(event.target);
+    var country = elem.val();
+
+    var action = "filter_country";
+    var handler = "control";
+    var token = getToken();
+    var data = JSON.stringify({
+        "country": country
+    });
+
+    sendToCatalogueHandler(action, handler, data, callback, token, null);
+
+    function callback(msg) {
+        var data = JSON.parse(msg);
+        var status = data.status;
+
+        if (status != true) {
+            alert(data.response);
+        } else {
+            $(".table tbody").html("");
+
+            var full_string = "";
+            var counter = 1;
+            console.log(Object.keys(data.products).length);
+
+            $.each(data.products, function(key, val) {
+                var uuid = val.UUID;
+                var productName = val.productName;
+                var stockQuantity = val.stockQuantity;
+                var regularPrice = val.regularPrice;
+                var status = val.status;
+
+                var paste_string = `
+                <tr onclick="openProduct(` + uuid + `)" class="clickable">
+                    <td>` + counter + `</td>
+                    <td>` + productName + `</td>
+                    <td>` + stockQuantity + `</td>
+                    <td>` + regularPrice + `</td>
+                    <td>` + status + `</td>
+                </tr>
+                `
+                full_string = full_string + paste_string;
+                counter++
+            });
+            $(".pagination").css("display", "none");
+
+            $(".table tbody").html(full_string);
+
+        }
+    }
+}
+
+function sort_setter(input = true) {
+    if (input == false) {
+        $(".catalogue_sort_options").fadeOut(250);
+        return;
+    }
+    var elem = $(event.target);
+    elem = $(elem);
+
+    var option = elem.find(":selected");
+    var selected_option = option.val();
+
+    if (selected_option == "sort") {
+        $(".catalogue_sort_options").css("display", "flex");
+        $(".catalogue_sort_options").fadeIn(300);
+    } else {
+        $(".catalogue_sort_options").fadeOut(250, function() {
+            renderContent('catalogue');
+        });
+
+    }
 }

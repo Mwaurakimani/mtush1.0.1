@@ -64,6 +64,7 @@ if (($mode == "update") && (isset($_SESSION['itemVariable']))) {
                 </div>
 
             </div>
+            
         </div>
     </div>
     <div class="section_edit">
