@@ -15,9 +15,6 @@ if(isset($_SESSION['TOKEN'])){
 
     if($verified){
         if($action == "addUser"){
-            foreach($data as $key => $value){
-                $data[$key] = $System->encodeToHTML($value);
-            }
             $userAccount = new userAccount();
 
             $password = $userAccount->encryptPassword('password');
@@ -72,9 +69,6 @@ if(isset($_SESSION['TOKEN'])){
             echo json_encode($response);
             exit();
         }elseif($action == "update"){
-            foreach ($data as $key => $value) {
-                $data[$key] = $System->encodeToHTML($value);
-            }
             $userAccount = new userAccount();
 
             $password = $userAccount->encryptPassword($data['password']);

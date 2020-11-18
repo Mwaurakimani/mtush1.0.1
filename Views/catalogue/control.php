@@ -16,9 +16,6 @@ if (isset($_SESSION['TOKEN'])) {
     if ($verified) {
         if($action == "addProduct"){
             $Product = new products();
-            foreach ($data as $key => $value) {
-                $data[$key] = $System->encodeToHTML($value);
-            }
             
             //getting fields
             $fields = [

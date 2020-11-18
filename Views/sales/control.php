@@ -100,8 +100,6 @@ if (isset($_SESSION['TOKEN'])) {
             exit;
           }
 
-          $value = $System->encodeToHTML($value);
-
           //send request to delete;
 
           $order = new order();
