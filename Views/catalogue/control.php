@@ -60,9 +60,6 @@ if (isset($_SESSION['TOKEN'])) {
             echo json_encode($response);
         }else if ($action == "update") {
             $Product = new products();
-            foreach ($data as $key => $value) {
-                $data[$key] = $System->encodeToHTML($value);
-            }
             //getting fields
             $fields = [
                 'productName',
