@@ -40,6 +40,7 @@ function collector() {
     var data = {
         productName: $('input[name$="productName"]').val(),
         supplier: $('input[name$="supplier"]').val(),
+        origin: $('input[name$="origin"]').val(),
         stock: $('input[name$="stock"]').val(),
         lowStock: $('input[name$="lowStock"]').val(),
         purchasePrice: $('input[name$="purchasePrice"]').val(),
@@ -59,7 +60,6 @@ function collector() {
             data = false;
         }
     });
-
     return data;
 }
 

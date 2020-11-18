@@ -19,10 +19,12 @@ if (isset($_SESSION['TOKEN'])) {
             foreach ($data as $key => $value) {
                 $data[$key] = $System->encodeToHTML($value);
             }
+            
             //getting fields
             $fields = [
                 'productName',
                 'supplier',
+                'origin',
                 'stockQuantity',
                 'lowStockThreshold',
                 'purchasePrice',
@@ -38,6 +40,7 @@ if (isset($_SESSION['TOKEN'])) {
             $values = [
                 $data['productName'],
                 $data['supplier'],
+                $data['origin'],
                 $data['stock'],
                 $data['lowStock'],
                 $data['purchasePrice'],
@@ -49,12 +52,13 @@ if (isset($_SESSION['TOKEN'])) {
             ];
 
             $combined  = array_combine($fields, $values);
+            var_dump($combined);
+            exit();
 
             $response = $Product->addProductToDatabase($combined, $moderator);
 
             echo json_encode($response);
-        }
-        else if ($action == "update") {
+        }else if ($action == "update") {
             $Product = new products();
             foreach ($data as $key => $value) {
                 $data[$key] = $System->encodeToHTML($value);
@@ -63,6 +67,7 @@ if (isset($_SESSION['TOKEN'])) {
             $fields = [
                 'productName',
                 'supplier',
+                'origin',
                 'stockQuantity',
                 'lowStockThreshold',
                 'purchasePrice',
@@ -78,6 +83,7 @@ if (isset($_SESSION['TOKEN'])) {
             $values = [
                 $data['productName'],
                 $data['supplier'],
+                $data['origin'],
                 $data['stock'],
                 $data['lowStock'],
                 $data['purchasePrice'],

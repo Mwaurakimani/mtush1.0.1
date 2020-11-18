@@ -65,6 +65,24 @@ if (($mode == "update") && (isset($_SESSION['itemVariable']))) {
 
             </div>
             
+            
+        </div>
+        <div class="user_group_entry_1">
+            <div class="input_field_elem">
+                <p>Country</p>
+                <input type="text" name="origin" value="<?php
+                                                            if ($update) {
+                                                                echo $item['origin'];
+                                                            }
+                                                            ?>" onkeyup="searchVendor()">
+                <span>*</span>
+                <div class="supplierDropBox">
+
+                </div>
+
+            </div>
+            
+            
         </div>
     </div>
     <div class="section_edit">
