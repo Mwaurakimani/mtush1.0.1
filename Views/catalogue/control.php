@@ -49,8 +49,6 @@ if (isset($_SESSION['TOKEN'])) {
             ];
 
             $combined  = array_combine($fields, $values);
-            var_dump($combined);
-            exit();
 
             $response = $Product->addProductToDatabase($combined, $moderator);
 

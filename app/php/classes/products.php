@@ -6,8 +6,8 @@ class products extends System
         $dataset = $data;
         $conn = $moderator->getConnection();
         $table = 'tbl_products';
-        $type = 'ssddddiisi';
-        $val = '(?,?,?,?,?,?,?,?,?,?)';
+        $type = 'sssddddiisi';
+        $val = '(?,?,?,?,?,?,?,?,?,?,?)';
 
         $response = $moderator->add_to_database($dataset, $table, $conn, $type, $val);
 
