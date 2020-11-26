@@ -40,6 +40,10 @@ if(isset($_SESSION['TOKEN'])){
                     $user = $_SESSION['LOGGED_USER'],
                     $mode = "update" 
                 );
+                $response = array(
+                    "status"=>false,
+                    "response" => ""
+                );
 
                 $set_var = json_encode($set_var);
 
@@ -55,20 +59,39 @@ if(isset($_SESSION['TOKEN'])){
                     $result = curl_exec($ch);
                     curl_close($ch);
                     # Print response.
-                    echo $result;
+
+                    $response['response'] = $result;
+                    $response['status'] = $result;
+
+                    echo json_encode($response);
+                } else {
+                    $response['response'] = "Invalid password";
+                    echo json_encode($response);
                 }
             }else{
-                $responce = array(
-                    "responceCode"=>0,
-                    "responce"=>"User not found"
-                );
+                
             }
 
         }elseif($action == "update_password"){
-            echo "hellow";
-            exit();
+            $url = ROOT . "/Views/userAccount/passwordChange.php";
+            $ch = curl_init();
+            $set_var = "hi";
+
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $set_var );
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            # Send request.
+            $result = curl_exec($ch);
+            curl_close($ch);
+            # Print response.
+
+            $response['response'] = $result;
+            $response['status'] = $result;
+
+            echo $result;
+            // echo json_encode($response);
         }elseif($action == "change"){
-            
             foreach ($data as $key => $value) {
                 $data[$key] = htmlentities($value);
             }
@@ -121,6 +144,83 @@ if(isset($_SESSION['TOKEN'])){
             $response = $userAccount->updateUser($combined, $moderator,$id);
 
             echo json_encode($response);
+        }else if("confirm_change_password"){
+            $data = json_decode($data);
+
+            $Products = new products();
+
+            $table = 'tbl_moderators';
+        
+            $fields = [
+                'password'
+            ];
+        
+            $type = "i";
+        
+            $reference = [
+                array("UUID", $_SESSION['LOGGED_USER'])
+            ];
+            
+            $user = $Products->readProductsByReference($moderator, $table, $reference, $fields, $type);
+
+            if($user[0]){
+                if($data->New_password != $data->Confirm_password){
+                    $result = array (
+                        "status"=>101,
+                        "response"=>"Passwords Don't Match"
+                    );
+                    echo json_encode($result);
+
+                    exit();
+                }elseif($data->current_password == $data->Confirm_password){
+                    $result = array (
+                        "status"=>102,
+                        "response"=>"Cannot Use the same password"
+                    );
+
+                    echo json_encode($result);
+
+                    exit();
+                }else{
+                    if (password_verify($data->current_password, $user[1][0]['password'])) {
+                        $result = array (
+                            "status"=>1,
+                            "response"=>"Changing password"
+                        );
+
+                        // encode html
+                        $newPassword = password_hash($data->New_password, PASSWORD_DEFAULT);
+
+                        $conn = $moderator->getConnection();
+                        
+                        $stmt = $conn->prepare("UPDATE tbl_moderators SET password=? WHERE UUID=?");
+                        $stmt->bind_param("si", $newPassword,$_SESSION['LOGGED_USER']);
+                        $stmt->execute();
+                        $stmt->close();
+
+                        $result = array (
+                            "status"=>1,
+                            "response"=>"Password changed"
+                        );
+
+                        echo json_encode($result);
+
+                        exit();
+                    } else {
+                        $result = array (
+                            "status"=>102,
+                            "response"=>"Invalid Password"
+                        );
+    
+                        echo json_encode($result);
+    
+                        exit(); 
+                    }
+                }
+            }else{
+                echo "Not found";
+            }
+
         }else{
             echo "Options don't match";
         }

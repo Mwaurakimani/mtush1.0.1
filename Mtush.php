@@ -44,7 +44,6 @@ $_SESSION['TOKEN'] = 1234;
 <body data-token="<?php echo $_SESSION['TOKEN'] ?>">
     <div class="elemental">
         <div class="elemental_splashboard">
-            
         </div>
         <button onclick="closeElemental()">Close</button>
     </div>
