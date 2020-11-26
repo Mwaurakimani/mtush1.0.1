@@ -41,7 +41,7 @@
         $type = 'ssssssssssssssssss';
         $val = '(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
 
-        $response = $moderator-> add_to_database($dataset,$table,$conn,$type,$val);
+        $response = $moderator-> add_to_database($dataset,$table,$conn,$type,$val); 
         $return = "";
 
         if($response['status'] == true){

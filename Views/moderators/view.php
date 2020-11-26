@@ -70,7 +70,7 @@ set_include_path('control.php');
                             $phone = $value['phoneNumber1'];
                             $role = $value['Role'];
                     ?>
-                            <tr onclick="openUserAccount(<?php echo `'`.$uuid.`'` ?>)">
+                            <tr onclick="openUserAccount('<?php echo $uuid ?>')">
                                 <th scope="row">
                                     <?php
                                     echo $iter;
