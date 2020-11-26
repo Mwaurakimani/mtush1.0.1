@@ -104,13 +104,15 @@ if (($mode == "update") && (isset($_SESSION['itemVariable']))) {
                                                 ?>">
         <span>*</span>
       </div>
-      <div class="input_field_elem">
-        <p>Password</p>
-        <input type="password" name="password" value="<?php
+      <div class="input_field_elem" <?php
                                                       if ($update) {
-                                                        echo "00000";
+                                                        ?>
+                                                        style="display:none"
+                                                        <?php
                                                       }
-                                                      ?>">
+                                                      ?>>
+        <p>Password</p>
+        <input type="password" name="password"  >
       </div>
       <div class="input_field_elem">
         <p>Phone 1</p>

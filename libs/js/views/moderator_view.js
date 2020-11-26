@@ -61,6 +61,7 @@ function acccollector() {
 
     $.each(data, function(key, val) {
         if ((key != 'phone2' && isEmpty(val)) || (key != 'password' && isEmpty(val))) {
+            console.log(key);
             data = false;
         }
     });
@@ -99,29 +100,29 @@ function updateUserAccount() {
                 }
             }
         } else {
-            // console.log("2");
-            // return
-            // var action = "addUser";
-            // var handler = "control";
-            // var token = getToken();
+            var action = "addUser";
+            var handler = "control";
+            var token = getToken();
 
-            // sendToUserAccountHandler(action, handler, data, callback, token, null);
+            sendToModeratorHandler(action, handler, data, callback, token, null);
 
-            // function callback(resp) {
+            function callback(resp) {
+                console.log(resp);
+                return;
 
-            //     var res = JSON.parse(resp);
-            //     var response = res.response;
-            //     if ((res.status == true) && (res.User != null) && (res.User[0] == true)) {
-            //         alert(response);
+                var res = JSON.parse(resp);
+                var response = res.response;
+                if ((res.status == true) && (res.User != null) && (res.User[0] == true)) {
+                    alert(response);
 
-            //         var data = res.User[1][0];
+                    var data = res.User[1][0];
 
-            //         updateFields(data);
+                    updateFields(data);
 
-            //     } else {
-            //         alert("Error Adding User.Please Contact Administrator to resolve this issue.");
-            //     }
-            // }
+                } else {
+                    alert("Error Adding User.Please Contact Administrator to resolve this issue.");
+                }
+            }
         }
 
     } else {

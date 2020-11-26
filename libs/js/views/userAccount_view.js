@@ -65,7 +65,14 @@ function confirmPasswordChange() {
         sendToUserAccountHandler(action, handler, data, callback, token, null)
 
         function callback(msg) {
-            console.log(msg);
+            var data = JSON.parse(msg);
+
+            if (data.status != 1) {
+                alert(data.response);
+            } else {
+                alert(data.response);
+                closeElemental();
+            }
         }
     }
 }

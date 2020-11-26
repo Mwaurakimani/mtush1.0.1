@@ -65,3 +65,17 @@ function sendToSalesHandler(action, handler, data, callback, token, validator = 
             }
         });
 }
+
+function sendToModeratorHandler(action, handler, data, callback, token, user) {
+    $.post("Views/moderators/" + handler + ".php", {
+            action: action,
+            data: data,
+            token: token,
+            user: user
+        })
+        .done(function(data) {
+            if (callback != undefined) {
+                callback(data);
+            }
+        });
+}
