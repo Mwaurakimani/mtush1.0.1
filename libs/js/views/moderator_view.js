@@ -107,9 +107,6 @@ function updateUserAccount() {
             sendToModeratorHandler(action, handler, data, callback, token, null);
 
             function callback(resp) {
-                console.log(resp);
-                return;
-
                 var res = JSON.parse(resp);
                 var response = res.response;
                 if ((res.status == true) && (res.User != null) && (res.User[0] == true)) {

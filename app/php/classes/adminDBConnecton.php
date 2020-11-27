@@ -75,8 +75,6 @@ trait  adminDBConnecton
         $response['response'] = 'Added Successfully';
         $stmt->close();
 
-        var_dump($response);
-        exit();
         return $response;
     }
 
