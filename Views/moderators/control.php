@@ -125,6 +125,30 @@ if(isset($_SESSION['TOKEN'])){
 
             echo json_encode($response);
             exit();
+        }elseif($action == "searchModerator"){
+            $data = htmlspecialchars($data);
+
+            if(!isset($data)){
+                $reposce = array(
+                    "status"=>false,
+                    "response"=>"No Moderator matches your criteria"
+                );
+            }else{
+                
+                $User = new userAccount();
+
+                $table = 'tbl_moderators';
+    
+                $statement = "username LIKE CONCAT('%',?,'%') OR firstName LIKE CONCAT('%',?,'%') OR lastName LIKE CONCAT('%',?,'%') OR otherName LIKE CONCAT('%',?,'%')";
+    
+                $type = "ssss";
+    
+                $values = [$data,$data,$data,$data];
+    
+                $result = $moderator->searcher($table, $statement, $type, $values);
+
+                echo json_encode($result);
+            }
         }
     }else{
         echo "unverified";

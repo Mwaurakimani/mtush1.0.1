@@ -192,3 +192,64 @@ function updateFields(data) {
         });
     }
 }
+
+function searchModerator() {
+    var elem = $(event.currentTarget);
+    var data = elem.val();
+
+    if (!isEmpty(data)) {
+        var action = "searchModerator";
+        var handler = "control";
+        var token = getToken();
+
+        sendToModeratorHandler(action, handler, data, callback, token)
+
+        function callback(msg) {
+            var data = JSON.parse(msg);
+
+            if (data[0]) {
+                var tableBody = $(document.getElementsByTagName("tbody")[0]);
+                tableBody.html("");
+                var count = 1;
+                var fullStatement = ""
+
+                $.each(data[1], function(key, val) {
+                    var uid = val.UUID;
+                    var name = val.firstName + " " + val.otherName + " " + val.lastName;
+                    var email = val.moderatorEmail;
+                    var phone = val.phone1;
+                    var status = val.status;
+
+                    var statement = `
+                        <tr onclick="openUserAccount('` + uid + `')">
+                            <th scope="row">
+                                ` + count + `
+                            </th>
+                            <td>
+                                ` + name + `
+                            </td>
+                            <td>
+                                ` + email + `
+                            </td>
+                            <td>
+                                ` + phone + `
+                            </td>
+                            <td>
+                                ` + status + `
+                            </td>
+                        </tr>
+                    `;
+                    count++;
+                    fullStatement = fullStatement + statement;
+                });
+
+                tableBody.html(fullStatement);
+                return
+            } else {
+                alert("No record found");
+            }
+        }
+    } else {
+        return;
+    }
+}

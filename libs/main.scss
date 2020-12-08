@@ -1,6 +1,6 @@
-//configuration
+// configuration
 @import 'scss/config';
-//components
+// components
 @import 'scss/form';
 @import 'scss/btn_emulate';
 @import 'scss/scroll';
@@ -9,7 +9,7 @@
 @import 'scss/pagination';
 @import 'scss/customCheckbox';
 @import 'scss/tableView';
-//Views
+// Views
 @import 'scss/loginView';
 @import 'scss/Home';
 @import 'scss/userAccountView';
@@ -20,3 +20,4 @@
 @import 'scss/catalogueView';
 @import 'scss/passwordResetview';
 @import 'scss/error_view';
+@import 'scss/moderatorView'

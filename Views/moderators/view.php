@@ -21,8 +21,7 @@ set_include_path('control.php');
         <div class="more_options_pannel">
             <div class="sys_input_element">
                 <div class="input_element">
-                    <input type="text">
-                    <button type="button" class="btn btn-outline-danger">Search</button>
+                    <input type="text" placeholder="Search" onkeyup="searchModerator()">
                 </div>
             </div>
             <div class="sys_input_element">
@@ -109,17 +108,5 @@ set_include_path('control.php');
                 </tbody>
             </table>
         </div>
-    </div>
-
-    <div class="pagination">
-        <ul>
-            <li>&lt;&lt;</li>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>&gt;&gt;</li>
-        </ul>
     </div>
 </section>

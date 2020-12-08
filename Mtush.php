@@ -63,14 +63,42 @@ $_SESSION['TOKEN'] = 1234;
         </div>
         <div class="account_pannel" onclick="toggleDropdown('open')">
             <div class="account_image">
+                <span>1000</span>
                 <img src="<?php echo IMAGES . "/icons/user.png" ?>" alt="">
             </div>
             <div class="account_dropdown_pannel">
                 <div class="welcome_note">
-                    <p>Welcome back Peter</p>
+                    <p>Welcome back 
+                        <?php
+                            $user =  $_SESSION['LOGGED_USER'];
+                            $userDetails = new userAccount();
+
+                            $table = 'tbl_moderators';
+                          
+                            $fields = [
+                              '*'
+                            ];
+                          
+                            $type = "i";
+                          
+                            $reference = [
+                              array("UUID", $user),
+                            ];
+                            $userDetails = $userDetails->readUserByReference($moderator,$table, $reference ,$fields ,$type);
+                            if ($userDetails[1] == true) {
+                                $user = $userDetails[1][0];
+                                echo $user['username'];
+                            } else {
+                                echo "Error";
+                            }
+
+
+                        ?>
+                    </p>
                 </div>
                 <div class="user_option_panel">
                     <div class="option_element">
+                        <!-- this element holds all side notifications -->
                         <div class="dropdown_elem">
 
                         </div>
